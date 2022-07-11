@@ -72,26 +72,7 @@ contract BuyMeACoffee {
             _message
         );
     }
-    function buyLargeCoffee(string memory _name, string memory _message) public payable {
-        //min 0.003 eth for a large coffee
-        require(msg.value >= 0.003 ether, "not enough for large coffee!");
 
-        // Add the memo to storage!
-        memos.push(Memo(
-            msg.sender,
-            block.timestamp,
-            _name,
-            _message
-        ));
-
-        // Emit a NewMemo event with details about the memo.
-        emit NewMemo(
-            msg.sender,
-            block.timestamp,
-            _name,
-            _message
-        );
-    }
     /**
      * @dev send the entire balance stored in this contract to the owner
      */
